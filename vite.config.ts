@@ -53,6 +53,7 @@ export default ({ mode }: ConfigEnv): UserConfigExport => {
       AutoImport({
         imports: [
           'vue',
+          'pinia',
           '@vueuse/core',
           VueRouterAutoImports,
           {

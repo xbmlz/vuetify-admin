@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import { routes } from 'vue-router/auto-routes'
+import { handleHotUpdate, routes } from 'vue-router/auto-routes'
 import { setupLayouts } from 'virtual:generated-layouts'
 
 export const install: UserPlugin = (app) => {
@@ -9,4 +9,8 @@ export const install: UserPlugin = (app) => {
   })
 
   app.use(router)
+
+  if (import.meta.hot) {
+    handleHotUpdate(router)
+  }
 }

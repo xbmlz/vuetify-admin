@@ -1,6 +1,15 @@
+<script setup lang="ts">
+const appStore = useAppStore()
+const { drawer } = storeToRefs(appStore)
+</script>
+
 <template>
   <v-app-bar app flat :height="48">
-    xxx
+    <v-btn elevation="1" fab small style="z-index: 1" @click="drawer = !drawer">
+      <v-icon>
+        {{ drawer ? 'mdi-backburger' : 'mdi-menu-open' }}
+      </v-icon>
+    </v-btn>
   </v-app-bar>
 </template>
 

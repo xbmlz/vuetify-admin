@@ -11,7 +11,7 @@ const { drawer } = storeToRefs(appStore)
       </v-icon>
     </v-btn>
 
-    <!-- <AppBreadcrumbs /> -->
+    <AppBreadcrumbs />
   </v-app-bar>
 </template>
 

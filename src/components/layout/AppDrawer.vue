@@ -2,6 +2,7 @@
 import { useDisplay } from 'vuetify'
 import type { RouteRecordRaw } from 'vue-router'
 import { cloneDeep } from 'lodash-es'
+import pkg from '../../../package.json'
 import { staticRoutes } from '@/router'
 
 const appStore = useAppStore()
@@ -138,13 +139,28 @@ const items = computed(() => {
         </template>
       </v-list-item>
     </v-list>
-    <v-list
-      :items="items"
-    >
+    <v-list :items="items">
       <template #title="{ item }">
         {{ item.title }}
       </template>
     </v-list>
+
+    <template #append>
+      <v-divider />
+
+      <div class="d-flex align-center text-caption text-medium-emphasis pa-2">
+        <div class="d-flex ms-auto overflow-hidden">
+          <v-btn
+            :text="pkg.version"
+            class="text-caption"
+            prepend-icon="mdi-tag-outline"
+            size="small"
+            variant="text"
+            slim
+          />
+        </div>
+      </div>
+    </template>
   </v-navigation-drawer>
 </template>
 

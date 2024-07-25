@@ -6,5 +6,11 @@ declare module 'vue-router' {
     title?: string
     // icon
     icon?: string
+    // order
+    order?: number
+    // hidden
+    hidden?: boolean
+    // hideChildren
+    hideChildren?: boolean
   }
 }

@@ -9,9 +9,6 @@ import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import VueDevTools from 'vite-plugin-vue-devtools'
 import Vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
-import VueRouter from 'unplugin-vue-router/vite'
-import { VueRouterAutoImports } from 'unplugin-vue-router'
-import Layouts from 'vite-plugin-vue-layouts'
 
 // https://vitejs.dev/config/
 export default ({ mode }: ConfigEnv): UserConfigExport => {
@@ -28,14 +25,6 @@ export default ({ mode }: ConfigEnv): UserConfigExport => {
       },
     },
     plugins: [
-      // https://github.com/posva/unplugin-vue-router
-      VueRouter({
-        dts: 'types/typed-router.d.ts',
-      }),
-
-      // https://github.com/JohnCampionJr/vite-plugin-vue-layouts
-      Layouts(),
-
       // https://vuejs.org/
       Vue({
         template: { transformAssetUrls },
@@ -55,11 +44,7 @@ export default ({ mode }: ConfigEnv): UserConfigExport => {
           'vue',
           'pinia',
           '@vueuse/core',
-          VueRouterAutoImports,
-          {
-            // add any other imports you were relying on
-            'vue-router/auto': ['useLink'],
-          },
+          'vue-router',
         ],
         dts: 'types/auto-imports.d.ts',
         vueTemplate: true,

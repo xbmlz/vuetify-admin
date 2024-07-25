@@ -10,6 +10,8 @@ const { drawer } = storeToRefs(appStore)
         {{ drawer ? 'mdi-backburger' : 'mdi-menu-open' }}
       </v-icon>
     </v-btn>
+
+    <!-- <AppBreadcrumbs /> -->
   </v-app-bar>
 </template>
 

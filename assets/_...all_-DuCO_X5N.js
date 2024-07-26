@@ -1,1 +1,0 @@
-import{_ as t,c as s,a as e,b as a,w as o,o as c,d as r}from"./index-C5CI_hpq.js";import{V as _}from"./VIcon-WpZzCSS6.js";const n={},d={class:"wrapper"},l=e("p",{class:"text-h5"}," 404 Not Found ",-1);function i(f,p){return c(),s("div",null,[e("div",d,[a(_,{class:"logo mb-4"},{default:o(()=>[r(" $nustar ")]),_:1}),l])])}const x=t(n,[["render",i]]);export{x as default};

@@ -45,6 +45,7 @@ export default ({ mode }: ConfigEnv): UserConfigExport => {
           'pinia',
           '@vueuse/core',
           'vue-router',
+          'vue-i18n',
         ],
         dts: 'types/auto-imports.d.ts',
         vueTemplate: true,

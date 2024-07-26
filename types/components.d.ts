@@ -10,7 +10,10 @@ declare module 'vue' {
     AppBar: typeof import('./../src/components/layout/AppBar.vue')['default']
     AppBreadcrumbs: typeof import('./../src/components/layout/AppBreadcrumbs.vue')['default']
     AppDrawer: typeof import('./../src/components/layout/AppDrawer.vue')['default']
+    AppLanguage: typeof import('./../src/components/layout/AppLanguage.vue')['default']
     AppMain: typeof import('./../src/components/layout/AppMain.vue')['default']
+    AppThemeToggle: typeof import('./../src/components/layout/AppThemeToggle.vue')['default']
+    AppUserMenu: typeof import('./../src/components/layout/AppUserMenu.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }

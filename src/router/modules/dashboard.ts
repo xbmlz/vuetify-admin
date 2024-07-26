@@ -9,6 +9,7 @@ const dashboard: RouteRecordRaw = {
   meta: {
     title: '仪表盘',
     icon: 'mdi-monitor-dashboard',
+    order: 1,
   },
   children: [
     {
@@ -17,6 +18,7 @@ const dashboard: RouteRecordRaw = {
       component: () => import('@/pages/dashboard/index.vue'),
       meta: {
         title: '首页',
+        order: 1,
       },
     },
   ],

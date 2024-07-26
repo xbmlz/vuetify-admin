@@ -81,33 +81,43 @@ nextTick(() => {
 //   return travel(copyRoutes, 0)
 // })
 
-interface ItemProps {
-  prependIcon: string
-  to: string
-}
+// interface ItemProps {
+//   prependIcon: string
+//   to: string
+// }
 
-interface Item {
-  title: string
-  props: ItemProps
-  children?: Item[]
-}
+// interface Item {
+//   title: string
+//   props: ItemProps
+//   children?: Item[]
+// }
 
-function formatRoutes(routes: RouteRecordRaw[]): Item[] {
+function formatRoutes(routes: RouteRecordRaw[]): any {
   return routes.map((route) => {
     const { meta, children } = route
     const { title, icon } = meta || {}
-    const item: Item = {
-      title: title || '',
+
+    if (children && !meta?.hideChildren) {
+      return {
+        title: title || route.name,
+        order: meta?.order || 0,
+        children: formatRoutes(children),
+        props: {
+          prependIcon: icon,
+        },
+      }
+    }
+    return {
+      title: title || route.name,
+      order: meta?.order || 0,
       props: {
-        prependIcon: icon || '',
-        to: route.path,
+        replace: true,
+        to: {
+          name: route.name,
+        },
       },
     }
-    if (children) {
-      item.children = formatRoutes(children)
-    }
-    return item
-  })
+  }).sort((a, b) => a.order - b.order)
 }
 
 const items = computed(() => {
@@ -139,11 +149,10 @@ const items = computed(() => {
         </template>
       </v-list-item>
     </v-list>
-    <v-list :items="items">
-      <template #title="{ item }">
-        {{ item.title }}
-      </template>
-    </v-list>
+
+    <v-divider />
+
+    <v-list :items="items" />
 
     <template #append>
       <v-divider />

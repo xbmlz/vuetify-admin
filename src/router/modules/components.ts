@@ -9,6 +9,7 @@ const components: RouteRecordRaw = {
   meta: {
     title: '组件',
     icon: 'mdi-home',
+    order: 2,
   },
   children: [
     {
@@ -17,6 +18,7 @@ const components: RouteRecordRaw = {
       component: () => import('@/pages/components/charts/index.vue'),
       meta: {
         title: 'Charts',
+        order: 2,
       },
     },
     {
@@ -25,6 +27,7 @@ const components: RouteRecordRaw = {
       component: () => import('@/pages/components/markdown/index.vue'),
       meta: {
         title: 'Markdown',
+        order: 2,
       },
     },
   ],

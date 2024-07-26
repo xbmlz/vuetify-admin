@@ -1,5 +1,5 @@
-import { type RouteRecordRaw, createRouter, createWebHashHistory } from 'vue-router'
-import { LOGIN_ROUTE, ROOT_ROUTE } from './basic'
+import { type RouteRecordRaw, createRouter, createWebHistory } from 'vue-router'
+import { LOGIN_ROUTE, NOT_FOUND_ROUTE, ROOT_ROUTE } from './basic'
 
 const modules = import.meta.glob('./modules/*.ts', { eager: true })
 
@@ -17,8 +17,8 @@ function formatModules(_modules: any, result: RouteRecordRaw[]) {
 export const staticRoutes: RouteRecordRaw[] = formatModules(modules, [])
 
 export const router = createRouter({
-  history: createWebHashHistory(import.meta.env.VITE_PUBLIC_PATH),
-  routes: [LOGIN_ROUTE, ROOT_ROUTE, ...staticRoutes],
+  history: createWebHistory(import.meta.env.VITE_PUBLIC_PATH),
+  routes: [LOGIN_ROUTE, ROOT_ROUTE, ...staticRoutes, NOT_FOUND_ROUTE],
   strict: true,
   scrollBehavior: () => ({ left: 0, top: 0 }),
 })

@@ -6,6 +6,8 @@
 
 // https://vuetifyjs.com/features/sass-variables/`
 @use 'vuetify/settings' with (
-  $reset: false,
+  // $reset: true,
   $utilities: false
 );
+
+// Overwrite Vuetify default variables

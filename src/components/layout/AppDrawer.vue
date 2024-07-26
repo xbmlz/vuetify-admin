@@ -134,31 +134,25 @@ const items = computed(() => {
     :mini-variant="mini"
     app
   >
-    <v-list expand dense nav>
-      <v-list-item
-        prepend-avatar="https://cdn.vuetifyjs.com/images/john.png"
-        subtitle="john@google.com"
-        title="John Leider"
-      >
-        <template #append>
-          <v-btn
-            icon="mdi-menu-down"
-            size="small"
-            variant="text"
-          />
-        </template>
-      </v-list-item>
-    </v-list>
+    <template #prepend>
+      <v-list>
+        <v-list-item
+          prepend-avatar="https://randomuser.me/api/portraits/women/85.jpg"
+          subtitle="sandra_a88@gmailcom"
+          title="Sandra Adams"
+        />
+      </v-list>
 
-    <v-divider />
+      <v-divider />
+    </template>
 
     <v-list :items="items" />
 
     <template #append>
       <v-divider />
 
-      <div class="d-flex align-center text-caption text-medium-emphasis pa-2">
-        <div class="d-flex ms-auto overflow-hidden">
+      <div class="text-emphasis flex items-center pa-2 text-xl">
+        <div class="ms-auto flex overflow-hidden">
           <v-btn
             :text="pkg.version"
             class="text-caption"

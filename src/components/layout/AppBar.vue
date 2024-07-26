@@ -4,7 +4,7 @@ const { drawer } = storeToRefs(appStore)
 </script>
 
 <template>
-  <v-app-bar app flat :height="52">
+  <v-app-bar app flat :height="52" logo="vuetify">
     <template #prepend>
       <v-btn
         elevation="1"
@@ -17,7 +17,7 @@ const { drawer } = storeToRefs(appStore)
     </template>
 
     <template #append>
-      <AppLanguage />
+      <AppLocalePicker />
       <AppThemeToggle />
       <AppUserMenu />
     </template>

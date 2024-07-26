@@ -12,7 +12,6 @@ export const LOGIN_ROUTE: RouteRecordRaw = {
   name: 'Login',
   component: () => import('@/pages/login/index.vue'),
   meta: {
-    requiresAuth: false,
   },
 }
 
@@ -21,6 +20,5 @@ export const NOT_FOUND_ROUTE: RouteRecordRaw = {
   name: 'NotFound',
   component: () => import('@/layouts/404.vue'),
   meta: {
-    requiresAuth: false,
   },
 }
